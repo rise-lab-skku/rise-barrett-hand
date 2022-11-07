@@ -12,7 +12,9 @@ MimicPlugin::MimicPlugin():  ModelPlugin()
 
 MimicPlugin::~MimicPlugin()
 {
-  event::Events::DisconnectWorldUpdateBegin(this->updateConnection);
+  // https://github.com/crigroup/robotiq/issues/4
+  // event::Events::DisconnectWorldUpdateBegin(this->updateConnection);
+  this->updateConnection.reset();
 
   kill_sim = true;
 }
@@ -41,7 +43,7 @@ void MimicPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf )
   // simulation iteration.
   this->updateConnection = event::Events::ConnectWorldUpdateBegin(
       boost::bind(&MimicPlugin::UpdateChild, this));
-  
+
   ROS_INFO_STREAM("MimicPlugin model name: "<< modelName);
 
   joint_ = model_->GetJoint(joint_name_);
@@ -50,8 +52,11 @@ void MimicPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf )
 
 void MimicPlugin::UpdateChild()
 {
-   //mimic_joint_->SetAngle(0, math::Angle(joint_->GetAngle(0).Radian()*multiplier_));
-   mimic_joint_->SetPosition(0,joint_->GetAngle(0).Radian()*multiplier_);
+  //mimic_joint_->SetAngle(0, math::Angle(joint_->GetAngle(0).Radian()*multiplier_));
+
+  //  https://github.com/crigroup/robotiq/issues/4
+  // mimic_joint_->SetPosition(0,joint_->GetAngle(0).Radian()*multiplier_);
+  mimic_joint_->SetPosition(0, joint_->Position(0) * multiplier_);
 }
 
 GZ_REGISTER_MODEL_PLUGIN(MimicPlugin);
