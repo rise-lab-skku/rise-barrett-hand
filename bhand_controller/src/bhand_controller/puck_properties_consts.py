@@ -1,66 +1,66 @@
 #  puck_properties_consts.py
-#  
+#
 #  ~~~~~~~~~~~~
-#  
+#
 #  pyHand Constants File
-#  
+#
 #  ~~~~~~~~~~~~
-#  
+#
 #  ------------------------------------------------------------------
 #  Authors : Chloe Eghtebas,
 #            Brendan Ritter,
-#	     Pravina Samaratunga,
+# 	     Pravina Samaratunga,
 #            Jason Schwartz
-#  
+#
 #  Last change: 08.08.2013
 #
 #  Language: Python 2.7
 #  ------------------------------------------------------------------
-# 
-#  This version of pyHand is free software: you can redistribute it and/or 
+#
+#  This version of pyHand is free software: you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License as published
 #  by the Free Software Foundation.
-#  
+#
 
-#PuckID
+# PuckID
 FINGER1 = 11
 FINGER2 = 12
 FINGER3 = 13
 SPREAD = 14
-ALL_FINGERS=(FINGER1,FINGER2,FINGER3,SPREAD)
-GRASP=(FINGER1,FINGER2,FINGER3)
-#Property = ID
+ALL_FINGERS = (FINGER1, FINGER2, FINGER3, SPREAD)
+GRASP = (FINGER1, FINGER2, FINGER3)
+# Property = ID
 ACCEL = 82
 ADDR = 6
 ANA0 = 18
 ANA1 = 19
 BAUD = 12
 CMD = 29
-CMD_LOAD=0
-CMD_SAVE=1
-CMD_RESET=2
-CMD_DEF=3
-CMD_GET=4
-CMD_FIND=5
-CMD_SET=6
-CMD_HOME=7
-CMD_KEEP=8
-CMD_LOOP=9
-CMD_PASS=10
-CMD_VERS=11
-CMD_ERR=12
-CMD_HI=13
-CMD_IC=14
-CMD_IO=15
-CMD_TC=16
-CMD_TO=17
-CMD_CLOSE=18
-CMD_MOVE=19
-CMD_OPEN=20
-CMD_TERM=21
-CMD_HELP=22
-CMD_PPSINIT=23
-CMD_TESTEE=24
+CMD_LOAD = 0
+CMD_SAVE = 1
+CMD_RESET = 2
+CMD_DEF = 3
+CMD_GET = 4
+CMD_FIND = 5
+CMD_SET = 6
+CMD_HOME = 7
+CMD_KEEP = 8
+CMD_LOOP = 9
+CMD_PASS = 10
+CMD_VERS = 11
+CMD_ERR = 12
+CMD_HI = 13
+CMD_IC = 14
+CMD_IO = 15
+CMD_TC = 16
+CMD_TO = 17
+CMD_CLOSE = 18
+CMD_MOVE = 19
+CMD_OPEN = 20
+CMD_TERM = 21
+CMD_HELP = 22
+CMD_PPSINIT = 23
+CMD_TESTEE = 24
 CT = 56
 CT2 = 57
 CTS = 68
@@ -117,19 +117,19 @@ LOCK = 13
 LSG = 72
 M = 58
 M2 = 59
-MAX_ENCODER_TICKS=195000.0
-MAX_SPREAD_TICKS=36000.0
-MAX_FINGERTIP_TICKS=78000.0
+MAX_ENCODER_TICKS = 195000.0
+MAX_SPREAD_TICKS = 36000.0
+MAX_FINGERTIP_TICKS = 78000.0
 MCV = 46
 MDS = 65
 MECH = 66
 MECH2 = 67
 MODE = 8
-MODE_IDLE=0
-MODE_TORQUE=2
-MODE_PID=3
-MODE_VEL=4
-MODE_TRAP=5
+MODE_IDLE = 0
+MODE_TORQUE = 2
+MODE_PID = 3
+MODE_VEL = 4
+MODE_TRAP = 5
 MOFST = 61
 MOV = 47
 MPE = 76
@@ -151,8 +151,8 @@ SN = 2
 STAT = 5
 T = 42
 TACT = 106
-TACT_FULL=2
-TACT_10=1
+TACT_FULL = 2
+TACT_10 = 1
 TACTID = 107
 TACTID = 107
 TEMP = 9
@@ -199,6 +199,50 @@ FTS_T1 = 61
 FTS_T2 = 62
 FTS_T3 = 63
 FTS_A = 64
-NO_WRITE_PROPERTIES = [ANA0, ANA1, CT2, DP2, E2, EN2, ERROR, HALLH2, ILOGIC, IMOTOR, IOFF2, JOFST2, JP2, M2, MECH, MECH2, OT2, P2, SG, TEMP, THERM, VBUS, VLOGIC]
-NO_READ_PROPERTIES = [CMD, CT2, DEF, DP2, E2, EN2, FIND, HALLH2, IOFF2, JOFST2, JP2, LOAD, LOCK, M, M2, MECH2, OT2, P2, SAVE]
+NO_WRITE_PROPERTIES = [
+    ANA0,
+    ANA1,
+    CT2,
+    DP2,
+    E2,
+    EN2,
+    ERROR,
+    HALLH2,
+    ILOGIC,
+    IMOTOR,
+    IOFF2,
+    JOFST2,
+    JP2,
+    M2,
+    MECH,
+    MECH2,
+    OT2,
+    P2,
+    SG,
+    TEMP,
+    THERM,
+    VBUS,
+    VLOGIC,
+]
+NO_READ_PROPERTIES = [
+    CMD,
+    CT2,
+    DEF,
+    DP2,
+    E2,
+    EN2,
+    FIND,
+    HALLH2,
+    IOFF2,
+    JOFST2,
+    JP2,
+    LOAD,
+    LOCK,
+    M,
+    M2,
+    MECH2,
+    OT2,
+    P2,
+    SAVE,
+]
 LOCKED_PROPERTIES = [DIG0, DIG1, FET0, FET1, HALLH, HALLS, OD, PTEMP, ROLE, SN]
