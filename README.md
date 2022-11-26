@@ -7,6 +7,21 @@
 ROS packages to control the [Barrett Hand](https://advanced.barrett.com/barretthand).
 Supported models: BH8-280 and BH8-282
 
+__*Table of Contents*__
+
+1. [Quick start with real Barrett](#quick-start-with-real-barrett)
+2. [Prerequisites](#prerequisites)
+   1. [1. Essentials](#1-essentials)
+   2. [2. Peak-CAN driver](#2-peak-can-driver)
+   3. [3. pcan\_python](#3-pcan_python)
+3. [Troubleshooting](#troubleshooting)
+   1. [Error openning port `/dev/pcanusb32`](#error-openning-port-devpcanusb32)
+4. [Collections](#collections)
+   1. [bhand\_controller](#bhand_controller)
+   2. [rqt\_bhand](#rqt_bhand)
+   3. [barrett\_hand\_description](#barrett_hand_description)
+   4. [barrett\_hand\_sim](#barrett_hand_sim)
+
 ## Quick start with real Barrett
 
 1. Prepare [prerequisites](#prerequisites)
@@ -93,6 +108,26 @@ The [pcan_python](https://github.com/RobotnikAutomation/pcan_python.git) is a Py
    ```sh
    export PYTHONPATH=/usr/lib:$PYTHONPATH
    ```
+
+## Troubleshooting
+
+### Error openning port `/dev/pcanusb32`
+
+Check your pcan with:
+
+```sh
+sudo modprobe pcan
+pcaninfo
+```
+
+If you couldn't solve the issue with `sudo modprobe pcan (or pcan_usb)`, then reinstall the driver:
+
+```sh
+cd peak-linux-driver-X.Y.Z
+make clean
+make NET=NO_NETDEV_SUPPORT
+sudo make install
+```
 
 ## Collections
 
